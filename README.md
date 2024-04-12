@@ -9,6 +9,8 @@ The experimental environment is a single GPU environment using Colab. It contain
 Install dependencies
 
 ```
+git clone https://github.com/luckysjj/Bert-finetuning-with-Colossal-AI.git
+cd Bert-finetuning-with-Colossal-AI
 pip install -r requirements.txt
 ```
 
