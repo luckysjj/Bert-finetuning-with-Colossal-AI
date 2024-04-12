@@ -3,7 +3,7 @@ Bert experience with Colossal-AI.
 
 ## Overview
 
-The experimental environment is a single GPU environment using Colab. It contains two main goals: first, use the Booster API to compare the "accuracy" and "F1 score" and "Loss" indicators and fine-tune HuggingFace's Bert model; second, use the CUDA of four different Booster plugins (torch_ddp, torch_ddp_fp16, gemini, low_level_zero) Benchmark memory usage, throughput, and total number of model parameters. This study aims to evaluate the performance and efficiency of different fine-tuning strategies facilitated by the Booster plugin, paying particular attention to their impact on model accuracy, computational resource allocation, and processing speed.
+The experimental environment is a single GPU environment using Colab. It contains two main goals: first, use the Booster API to compare the "accuracy" and "F1 score" and "Loss" indicators and fine-tune HuggingFace's Bert model with different batch sizes(8, 16, 32, 64); second, use the CUDA of four different Booster plugins (torch_ddp, torch_ddp_fp16, gemini, low_level_zero) Benchmark memory usage, throughput, and total number of model parameters. This study aims to evaluate the performance and efficiency of different fine-tuning strategies facilitated by the Booster plugin, paying particular attention to their impact on model accuracy, computational resource allocation, and processing speed.
 
 ## Setup
 Install dependencies
@@ -27,12 +27,13 @@ python3 compare_data.py
 
 ![alt text](image.png)
 ![alt text](image-acc.png)
+
 ## Benchmark
 ```
 bash benchmark.sh
 ```
 
-In this section, I compare these metrics in a benchmark: CUDA memory footprint, throughput, and number of model parameters. Due to CUDA memory limitations, I set BATCH_SIZE to 16
+In this section, I compare these metrics in a benchmark: CUDA memory footprint, throughput, and number of model parameters. Due to CUDA memory limitations, I set BATCH_SIZE to 16.
 
 | parameters  | | | |
 | ------------|-------- |-------- |-------- |
